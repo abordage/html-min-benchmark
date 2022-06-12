@@ -12,7 +12,7 @@
     "homepage": "https://github.com/abordage/html-min-benchmark",
     "require": {
         "php": ">=7.4",
-        "abordage/html-min": "^0.1.0",
+        "abordage/html-min": "^0.2.0",
         "voku/html-min": "^4.5"
     },
     "require-dev": {
