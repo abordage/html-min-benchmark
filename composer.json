@@ -1,0 +1,54 @@
+{
+    "name": "abordage/html-min-benchmark",
+    "description": "Benchmark",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Bychko",
+            "email": "box@abordage.dev",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/abordage/html-min-benchmark",
+    "require": {
+        "php": ">=7.4",
+        "abordage/html-min": "^0.1.0",
+        "voku/html-min": "^4.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "phpbench/phpbench": "^1.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload-dev": {
+        "psr-4": {
+            "Abordage\\HtmlMinBenchmark\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "phpcsf": "vendor/bin/php-cs-fixer fix --diff",
+        "test:all": [
+            "@test:phpcsf",
+            "@test:phpbench",
+            "@test:phpbench:generate-html-report",
+            "@test:run-all-minifiers"
+        ],
+        "test:phpbench": "vendor/bin/phpbench run --report=consumption-of-time --progress=classdots",
+        "test:phpbench:generate-html-report": "vendor/bin/phpbench run --report=consumption-of-time --progress=classdots --output=consumption-of-time",
+        "test:phpcsf": "vendor/bin/php-cs-fixer fix --dry-run",
+        "test:run-all-minifiers": "@php src/RunAllMinifiers.php"
+    },
+    "scripts-descriptions": {
+        "phpcsf": "Run PHP-CS-Fixer fix",
+        "test:phpbench": "Run PHPBench",
+        "test:phpbench:generate-html-report": "Run PHPBench (generate html report)",
+        "test:phpcsf": "Run PHP-CS-Fixer test",
+        "test:run-all-minifiers": "See results in ./assets/results/"
+    }
+}

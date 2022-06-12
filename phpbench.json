@@ -1,0 +1,22 @@
+{
+    "runner.bootstrap": "vendor/autoload.php",
+    "runner.path": "tests",
+    "report.generators": {
+        "consumption-of-time": {
+            "extends": "default",
+            "title": "The Consumption of Time",
+            "description": "Benchmark how long it takes to consume time",
+            "cols": ["benchmark", "subject", "revs", "its", "mode", "mem_peak"]
+        },
+        "consumption-of-time-aggregate": {
+            "extends": "aggregate",
+            "cols": ["benchmark", "subject", "revs", "its", "mode", "mem_peak"]
+        }
+    },
+    "report.outputs": {
+        "consumption-of-time": {
+            "renderer": "html",
+            "path": "reports/consumption-of-time.html"
+        }
+    }
+}
