@@ -16,19 +16,10 @@ Please, suggest other packages to compare!
 
 With almost the same compression level, the speed is orders of magnitude higher.
 
-
-#### Comparison of Consumed Time
-
 ```bash
+# Comparison of Consumed Time
 composer test:phpbench
-```
 
-#### Comparison of compression sizes
-
-```bash
+#Comparison of Compression Sizes
 composer test:test:run-all-minifiers
 ```
-
-## Feedback
-
-If you have any feedback, comments or suggestions, please feel free to open an issue within this repository.
